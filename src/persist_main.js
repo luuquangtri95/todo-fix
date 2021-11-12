@@ -67,7 +67,7 @@ function initFormFilterTodo(params) {
 }
 
 (() => {
-  if (!window.location.search) {
+  if (window.location.search === "") {
     const newParams = new URLSearchParams(window.location.search);
     newParams.set("searchTerm", "");
     newParams.set("status", "all");
