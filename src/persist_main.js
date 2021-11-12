@@ -69,6 +69,14 @@ function initFormFilterTodo(params) {
 (() => {
   const params = new URLSearchParams(window.location.search);
 
+  if (!window.location.search) {
+    params.set("searchTerm", "");
+    params.set("status", "all");
+
+    const url = window.location.href + "?" + params.toString();
+    history.pushState({}, "", url);
+  }
+
   initFormSearchTodo(params);
   initFormFilterTodo(params);
 })();
