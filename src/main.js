@@ -249,9 +249,12 @@ function handleSubmitForm(e) {
 
     setItemLocalstorage(todoList);
 
+    //get params
+    const params = new URLSearchParams(window.location.search);
+
     //render UI
 
-    const newLiElement = createLiElement(newTodoItem);
+    const newLiElement = createLiElement(newTodoItem, params);
     const ulElement = document.getElementById("todo__list");
     ulElement.appendChild(newLiElement);
 
