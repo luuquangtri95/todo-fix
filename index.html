@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO LIST Ver 2</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <div class="container">
+        <h1 class="display-5">TODO LIST nè !!!</h1>
+        <h2 class="display-6">Create new TODO</h2>
+
+        <!-- form -->
+        <form class="mb-3" id="formId">
+          <div class="mb-3">
+            <label for="formInput" class="form-label"
+              >what are you doing to day ???</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="formInput"
+              aria-describedby="emailHelp"
+              placeholder="Play football,  learn javascript,  play with girl friend ... ??? "
+            />
+            <div class="form-check mt-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="formCheckbox"
+              />
+              <label class="form-check-label" for="formCheckbox">
+                Todo Completed
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <!-- search value -->
+        <div class="input-group mb-3">
+          <span class="input-group-text alert-danger" id="basic-addon1"
+            >Search Todo</span
+          >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter at least 1 character..."
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+            id="formSearchTodo"
+          />
+        </div>
+
+        <!-- filter status -->
+        <select
+          class="form-select"
+          id="formFilterTodo"
+          aria-label="Default select example"
+        >
+          <option selected value="all">All</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+        <!-- ul element -->
+        <hr />
+        <ul id="todo__list"></ul>
+      </div>
+    </div>
+
+    <!-- template fragment -->
+    <template id="templateLiElement">
+      <li>
+        <div class="todo alert alert-secondary">
+          <div class="d-flex justify-content-between align-items-center">
+            <p class="todo__heading mb-0" id="">todo title</p>
+            <div class="btns">
+              <button class="btn btn-sm btn-primary edit">Edit</button>
+              <button class="btn btn-sm btn-success mark-as-done">
+                Finish
+              </button>
+              <button class="btn btn-sm btn-danger remove">Remove</button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </template>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./src/main.js"></script>
+    <script src="./src/persist_main.js"></script>
+  </body>
+</html>
