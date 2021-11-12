@@ -265,6 +265,14 @@ function handleSubmitForm(e) {
   const todoList = getItemLocalStorage();
   const params = new URLSearchParams(window.location.search);
 
+  if (!window.location.search) {
+    params.set("searchTerm", "");
+    params.set("status", "all");
+
+    const url = window.location.href + "?" + params.toString();
+    history.pushState({}, "", url);
+  }
+
   renderTodoElements(todoList, "todo__list", params);
 
   const formElement = document.getElementById("formId");
