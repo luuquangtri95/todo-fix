@@ -72,7 +72,7 @@ function initFormFilterTodo(params) {
     newParams.set("searchTerm", "");
     newParams.set("status", "all");
 
-    const url = window.location.href + "?" + newParams.toString();
+    const url = window.location.pathname + "?" + newParams.toString();
     history.pushState({}, "", url);
   }
 
